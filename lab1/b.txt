@@ -1,3 +1,7 @@
 this is file for the operation to change.
 
+<<<<<<< HEAD
 change from B1
+=======
+change form C4
+>>>>>>> C4

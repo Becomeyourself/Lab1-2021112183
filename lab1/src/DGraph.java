@@ -399,6 +399,8 @@ public class DGraph {
         int index2 = -1;      //word2的索引
         String Reply = new String();
         boolean flag = false;   //判断word2是否可达
+
+        //初始化
         for(int i = 0;i< vertex;i++)
         {
             if(adj[i].getHead().word.equals(word1))  //找到以word1为顶点的边
@@ -410,9 +412,10 @@ public class DGraph {
             for(int j = 0;j< vertex;j++)
                 path[i][j] = -1;
         }
-
+        //结束操作
         if(index1 == -1 || index2 == -1)
             return "单词不存在！";
+
         visited[index1] = true;
         dist[index1] = 0;
         Node Vertex = adj[index1].getHead().next;    //word1后链接的点
@@ -492,16 +495,6 @@ public class DGraph {
                 }
             }
 
-			/*	Node interNode = adj[interVertex].first.next;  //待更新的节点
-				while(interNode != null)    //更新dist
-				{
-					if(!visited[interNode.No] && dist[interNode.No]>dist[interVertex]+interNode.weight)
-					{
-						dist[interNode.No] = dist[interVertex]+interNode.weight;
-						path[interNode.No] = interVertex;
-					}
-					interNode = interNode.next;
-				}*/
         }
         if(flag == false)
         {

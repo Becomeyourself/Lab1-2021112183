@@ -42,25 +42,25 @@ public class Blacktest {
  public void test0(){
   DGraph graph = new DGraph();
   readWordsToGraph(graph,"lab1/src/empty.txt");
-  System.out.println(graph.queryBridgeWords("word1","word2"));
+  System.out.println(graph.calcShortestPath("word1","word2"));
  }
  @Test
  public void test1() {
   DGraph graph = new DGraph();
   readWordsToGraph(graph,"lab1/src/exampleResults.txt");
-  System.out.println(graph.queryBridgeWords("to","out"));
+  System.out.println(graph.calcShortestPath("to","new"));
 
  }
  @Test
  public void test2() {
   DGraph graph = new DGraph();
   readWordsToGraph(graph,"lab1/src/exampleResults.txt");
-  System.out.println(graph.queryBridgeWords("123","456"));
+  System.out.println(graph.calcShortestPath("123","456"));
  }
  @Test
  public void test3() {
   DGraph graph = new DGraph();
   readWordsToGraph(graph,"lab1/src/exampleResults.txt");
-  System.out.println(graph.queryBridgeWords("to","new"));
+  System.out.println(graph.calcShortestPath("civilizations","new"));
  }
 }

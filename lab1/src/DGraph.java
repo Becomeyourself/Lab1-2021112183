@@ -1,8 +1,9 @@
+import java.io.File;
 //import java.util.regex.Matcher;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.io.File;
+
 public class DGraph {
     private int vertex;//num of vertex
     private int edge;//num of edge

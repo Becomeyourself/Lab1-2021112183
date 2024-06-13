@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.Duration;
+import static org.junit.jupiter.api.Assertions.*;
 public class Whitetest {
     public void readWordsToGraph(DGraph graph,String fileName){
         //graph = new DGraph();
@@ -38,27 +40,39 @@ public class Whitetest {
     }
     @Test
     public void test0(){
-        DGraph graph = new DGraph();
-        readWordsToGraph(graph,"lab1/src/empty.txt");
-        System.out.println(graph.queryBridgeWords("word1","word2"));
+        assertTimeout(Duration.ofSeconds(1), () -> {
+            DGraph graph = new DGraph();
+            readWordsToGraph(graph,"lab1/src/empty.txt");
+            System.out.println(graph.queryBridgeWords("word1","word2"));
+        });
+
     }
     @Test
     public void test1() {
-        DGraph graph = new DGraph();
-        readWordsToGraph(graph,"lab1/src/exampleResults.txt");
-        System.out.println(graph.queryBridgeWords("to","out"));
+        assertTimeout(Duration.ofSeconds(1), () -> {
+            DGraph graph = new DGraph();
+            readWordsToGraph(graph,"lab1/src/exampleResults.txt");
+            System.out.println(graph.queryBridgeWords("to","out"));
+        });
+
 
     }
     @Test
     public void test2() {
-        DGraph graph = new DGraph();
-        readWordsToGraph(graph,"lab1/src/exampleResults.txt");
-        System.out.println(graph.queryBridgeWords("123","456"));
+        assertTimeout(Duration.ofSeconds(1), () -> {
+            DGraph graph = new DGraph();
+            readWordsToGraph(graph,"lab1/src/exampleResults.txt");
+            System.out.println(graph.queryBridgeWords("123","456"));
+        });
+
     }
     @Test
     public void test3() {
-        DGraph graph = new DGraph();
-        readWordsToGraph(graph,"lab1/src/exampleResults.txt");
-        System.out.println(graph.queryBridgeWords("to","new"));
+        assertTimeout(Duration.ofSeconds(1), () -> {
+            DGraph graph = new DGraph();
+            readWordsToGraph(graph,"lab1/src/exampleResults.txt");
+            System.out.println(graph.queryBridgeWords("to","new"));
+        });
+
     }
 }
